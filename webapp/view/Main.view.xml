@@ -1,0 +1,29 @@
+<mvc:View controllerName="com.testing.dynamictable.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:core="sap.ui.core" xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns="sap.m"  xmlns:ui="sap.ui.table" >
+    <Page id="page" title="{i18n>title}">
+        <content>
+        <ComboBox id="idCB"
+				items="{sampleModel>/dropdown}" selectionChange="onSelectionChange">
+				<core:Item key="{sampleModel>name}" text="{sampleModel>name}"/>
+		</ComboBox>
+
+        <Panel id="idPanel">
+        <content>
+        <ui:Table id="idDynamictable" selectionMode="Single"></ui:Table>
+        </content>
+        </Panel>
+        
+        
+        <!-- <Panel id="idpanel">
+        <content>
+            <smartTable:SmartTable id="tableID" useVariantManagement="false" tableType="Table" useExportToExcel="true" showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true">
+			</smartTable:SmartTable>
+            </content>
+        </Panel> -->
+
+        <Button text="edit" press="onItemEdit"/>
+        <Button text="save" press="onItemSave"/>
+        </content>
+    </Page>
+</mvc:View>
