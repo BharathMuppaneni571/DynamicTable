@@ -191,6 +191,30 @@ sap.ui.define([
 
             onupdateDB: function(){
                 debugger;
+                //geting values
+                var oForm = sap.ui.getCore().byId('SimpleFormChange354');
+
+                var pnlDom = oForm.getDomRef()
+                var lables= [];
+                $(pnlDom).find('label').each(function(index, elem) {
+                    lables.push($(elem).text());          
+                });
+
+                var values = []; 
+                $(pnlDom).find('input').each(function(index, elem) {
+                    values.push($(elem)[0].value);          
+                });
+                
+                // var payload = {};
+                var tmpObj = {};
+                lables.forEach(function(lable,index){
+                    tmpObj[lable] = values[index];
+                })
+                
+                var payload = {
+                    "id": tmpObj.CategoryID
+                }
+                
                 this.onEditFrag.close();
             },
             closeDialog: function(){
