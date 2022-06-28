@@ -10,7 +10,11 @@
 
         <Panel id="idPanel">
         <content>
-        <ui:Table id="idDynamictable" selectionMode="Single"></ui:Table>
+        <ui:Table id="idDynamictable" selectionMode="Single" visibleRowCount="10" alternateRowColors="true" visibleRowCountMode="Interactive" enableColumnFreeze="true">
+        	<!-- <t:rowSettingsTemplate>
+				<t:RowSettings highlight="{=$(true) == true ? sap.ui.core.IndicationColor.Indication02 : 'Error'}"/>
+			</t:rowSettingsTemplate> -->
+            </ui:Table>
         </content>
         </Panel>
         

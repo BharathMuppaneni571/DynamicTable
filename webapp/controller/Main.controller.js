@@ -63,13 +63,29 @@ sap.ui.define([
                                 "EmployeeID": 1,
                                 "LastName": "Davolio",
                                 "FirstName": "Nancy",
-                                "Title": "Sales Representative"
+                                "Title": "Sales Representative",
+                                "FirstName1": "Nancy",
+                                "Title1": "Sales Representative",
+                                "FirstName2": "Nancy",
+                                "Title2": "Sales Representative",
+                                "FirstName3": "Nancy",
+                                "Title3": "Sales Representative",
+                                "FirstName4": "Nancy",
+                                "Title4": "Sales Representative",
+                                "FirstName5": "Nancy",
+                                "Title5": "Sales Representative",
+                                "FirstName6": "Nancy",
+                                "Title6": "Sales Representative"
                             },
                             {
                                 "EmployeeID": 2,
                                 "LastName": "Fuller",
                                 "FirstName": "Andrew",
-                                "Title": "Vice President, Sales"
+                                "Title": "Vice President, Sales",
+                                "FirstName1": "Nancy",
+                                "Title1": "Sales Representative",
+                                "FirstName2": "Nancy",
+                                "Title2": "Sales Representative"
                             },
                             {
                                 "EmployeeID": 3,
@@ -99,7 +115,11 @@ sap.ui.define([
                                 "EmployeeID": 7,
                                 "LastName": "King",
                                 "FirstName": "Robert",
-                                "Title": "Sales Representative"
+                                "Title": "Sales Representative",
+                                "FirstName1": "Nancy",
+                                "Title1": "Sales Representative",
+                                "FirstName2": "Nancy",
+                                "Title2": "Sales Representative"
                             },
                             {
                                 "EmployeeID": 8,
@@ -109,6 +129,30 @@ sap.ui.define([
                             },
                             {
                                 "EmployeeID": 9,
+                                "LastName": "Dodsworth",
+                                "FirstName": "Anne",
+                                "Title": "Sales Representative"
+                            },
+                            {
+                                "EmployeeID": 10,
+                                "LastName": "Dodsworth",
+                                "FirstName": "Anne",
+                                "Title": "Sales Representative"
+                            },
+                            {
+                                "EmployeeID": 11,
+                                "LastName": "Dodsworth",
+                                "FirstName": "Anne",
+                                "Title": "Sales Representative"
+                            },
+                            {
+                                "EmployeeID": 12,
+                                "LastName": "Dodsworth",
+                                "FirstName": "Anne",
+                                "Title": "Sales Representative"
+                            },
+                            {
+                                "EmployeeID": 13,
                                 "LastName": "Dodsworth",
                                 "FirstName": "Anne",
                                 "Title": "Sales Representative"
@@ -136,6 +180,15 @@ sap.ui.define([
                 temprowData.forEach(function (item) {
                     rowData.push(item);
                 });
+
+                
+                // you can filter unwanted fields from here
+                // var unwantedColumns = ["CategoryName"];
+                // var filteredFields = rowData.filter(function(data) {
+                //     debugger;
+                //     !data["bing"]
+                // });
+
                 var oModel = new sap.ui.model.json.JSONModel();
                 oModel.setData({
                     rows: rowData,
@@ -149,11 +202,16 @@ sap.ui.define([
                     var columnName = oContext.getObject();
                     return new sap.ui.table.Column({
                         label: columnName,
-                        template: columnName
+                        template: columnName,
+                        width: "auto",
+                        wrapping: true
+                        // autoResizeColumn: true
                     });
                 });
 
                 oTable.bindRows("/rows");
+                //for autoresizing columns width
+                // oTable.getColumns().map((col, index) => oTable.autoResizeColumn(index));
             },
             onItemSave: function () {
                 debugger;
@@ -185,9 +243,9 @@ sap.ui.define([
                 for (var i = 0; i < Object.keys(item).length; i++) {
                     oForm.addContent(new sap.m.Label({ text: Object.keys(item)[i] }));
                     if (Object.keys(item)[i] == "Title" || Object.keys(item)[i] == "Description") {
-                        oForm.addContent(new sap.m.Input({ type: sap.m.InputType.Text, value: Object.values(item)[i], editable: true }));
+                        oForm.addContent(new sap.m.Input({ type: sap.m.InputType.Text, value: Object.values(item)[i], editable: true}));
                     } else {
-                        oForm.addContent(new sap.m.Input({ type: sap.m.InputType.Text, value: Object.values(item)[i], editable: false }));
+                        oForm.addContent(new sap.m.Input({ type: sap.m.InputType.Text, value: Object.values(item)[i], editable: false}));
                     }
                 }
             },
