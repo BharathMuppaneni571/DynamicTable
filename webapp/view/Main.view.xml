@@ -15,6 +15,23 @@
 				<t:RowSettings highlight="{=$(true) == true ? sap.ui.core.IndicationColor.Indication02 : 'Error'}"/>
 			</t:rowSettingsTemplate> -->
             </ui:Table>
+
+        <Panel id="idSecondpanel">
+        <ComboBox id="idCB"
+				items="{sampleModel>/dropdown}" selectionChange="onSelectionChange">
+				<core:Item key="{sampleModel>name}" text="{sampleModel>name}"/>
+		</ComboBox>
+        
+        <ComboBox id="idCB"
+				items="{sampleModel>/items}" selectionChange="onSelectionChange">
+				<core:Item key="{sampleModel>name}" text="{sampleModel>name}"/>
+		</ComboBox>
+        
+
+        
+        
+        </Panel>
+
         </content>
         </Panel>
         
