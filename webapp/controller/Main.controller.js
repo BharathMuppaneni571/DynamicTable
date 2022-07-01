@@ -165,7 +165,7 @@ sap.ui.define([
                 var items = [];
                 for(var i =0; i<=100;i++){
                     
-                    items.pusyh({ "name": "Categories" });
+                    items.push({ "name": "Categories" });
                 }
 
 

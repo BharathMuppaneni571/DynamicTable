@@ -16,13 +16,13 @@
 			</t:rowSettingsTemplate> -->
             </ui:Table>
 
-        <Panel id="idSecondpanel">
-        <ComboBox id="idCB"
+        <!-- <Panel id="idSecondpanel">
+        <ComboBox id="idCB1"
 				items="{sampleModel>/dropdown}" selectionChange="onSelectionChange">
 				<core:Item key="{sampleModel>name}" text="{sampleModel>name}"/>
 		</ComboBox>
         
-        <ComboBox id="idCB"
+        <ComboBox id="idCB2"
 				items="{sampleModel>/items}" selectionChange="onSelectionChange">
 				<core:Item key="{sampleModel>name}" text="{sampleModel>name}"/>
 		</ComboBox>
@@ -30,7 +30,7 @@
 
         
         
-        </Panel>
+        </Panel> -->
 
         </content>
         </Panel>
